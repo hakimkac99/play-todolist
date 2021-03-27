@@ -3,9 +3,18 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.Application.index()
+
 
 GET     /about                           controllers.Application.about()
+
+# Gestion des tâches
+GET     /                                       controllers.Application.listTache()
+GET     /taches/ajouter                         controllers.Application.ajouterTacheForm()
+POST    /taches/ajouter                         controllers.Application.ajouterTache()
+POST    /taches/valider                         controllers.Application.validerTache()
+DELETE  /taches/supprimer                       controllers.Application.supprimerTache()
+PUT     /taches/modification                    controllers.Application.editTache()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

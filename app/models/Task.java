@@ -23,7 +23,7 @@ public class Task extends Model {
     public Task() {
     }
 
-    //public static final Finder<Long, Task> find = new Finder<>(Task.class);
+    public static final Finder<Long, Task> find = new Finder<>(Task.class);
 
 
 }
