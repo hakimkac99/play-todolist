@@ -1,0 +1,18 @@
+{
+  "apps": [
+    {
+      "app_id": "app_e1536112-135d-46fb-a5bb-d55600bdf624",
+      "org_id": "user_64563c5a-fe5e-488a-9294-e0eb88960d26",
+      "deploy_url": "https://push-par-clevercloud-customers.services.clever-cloud.com/app_e1536112-135d-46fb-a5bb-d55600bdf624.git",
+      "name": "test",
+      "alias": "test"
+    },
+    {
+      "app_id": "app_feb77536-5ba8-40d0-8d3e-00798c0fe49f",
+      "org_id": "user_64563c5a-fe5e-488a-9294-e0eb88960d26",
+      "deploy_url": "https://push-par-clevercloud-customers.services.clever-cloud.com/app_feb77536-5ba8-40d0-8d3e-00798c0fe49f.git",
+      "name": "helloworld",
+      "alias": "helloworld"
+    }
+  ]
+}
