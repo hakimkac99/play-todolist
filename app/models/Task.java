@@ -10,7 +10,7 @@ import io.ebean.*;
 
 public class Task extends Model {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
     @Column(nullable = false)
