@@ -1,0 +1,24 @@
+@()
+
+@main("Ajouter une tache") {
+<h1>Ajouter une tache</h1>
+<input id="title" type="text">
+<button>Ajouter la tache</button>
+
+
+<script type="text/javascript" charset="utf-8">
+      // Validation d'une tâche (appel ajax - requête POST)
+      $('button').click(function(event){
+          $.ajax({
+              url: '@routes.Application.ajouterTache()',
+              type: 'POST',
+              contentType:'application/json',
+              data: JSON.stringify({title: $(this).prev().val()}),
+              success: function(result) {
+                window.location.href = '@routes.Application.listTache()';
+              }
+          });
+      });
+
+</script>
+}

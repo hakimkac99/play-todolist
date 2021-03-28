@@ -10,10 +10,14 @@ GET     /about                           controllers.Application.about()
 # Gestion des tâches
 GET     /                                       controllers.Application.listTache()
 GET     /taches/ajouter                         controllers.Application.ajouterTacheForm()
-POST    /taches/ajouter                         controllers.Application.ajouterTache()
-POST    /taches/valider                         controllers.Application.validerTache()
-DELETE  /taches/supprimer                       controllers.Application.supprimerTache()
-PUT     /taches/modification                    controllers.Application.editTache()
++nocsrf
+POST    /taches/ajouter                         controllers.Application.ajouterTache(request: Request)
++nocsrf
+POST    /taches/valider                         controllers.Application.validerTache(request: Request)
++nocsrf
+DELETE  /taches/supprimer                       controllers.Application.supprimerTache(request: Request)
++nocsrf
+PUT     /taches/modification                    controllers.Application.editTache(request: Request)
 
 
 # Map static resources from the /public folder to the /assets URL path

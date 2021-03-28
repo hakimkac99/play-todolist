@@ -9,10 +9,10 @@
     @for(task <- taskList) {
     <li id="@task.getId()">
 
-      @if(task.getDone()) {
-      <input type="checkbox" checked>
+      @if(task.isDone()) {
+      <input  type="checkbox" checked>
       }else{
-      <input type="checkbox">
+      <input  type="checkbox">
       }
       <span class="title">@task.getTitle()</span>
       <a href="#" class="edit"><img src="@routes.Assets.versioned("images/edit.png")" alt="modifier la tache" width="10" height="10"></a>
@@ -25,25 +25,13 @@
 
   <script type="text/javascript" charset="utf-8">
 
-      // Exemple type d'une requête AJAX avec la bibliothèque JQuery.
-      // http://api.jquery.com/jQuery.ajax/
-      /*
-      $.ajax({
-          url: '', 	// NomControleur.nomMethode() (Spécifique à Play!)
-          type: '',   // Type de la requete HTTP (GET, POST, PUT, ...)
-          data: {},   // Données à envoyer au serveur
-          success: function(result) { // Fonction appelé en cas de success
-          }
-      });
-      */
-
-
       // Validation d'une tâche (appel ajax - requête POST)
       $("input:checkbox").live("click", function(event){
           $.ajax({
               url: '@routes.Application.validerTache()',
               type: 'POST',
-              data: {id: $(this).attr('id')}
+              contentType:'application/json',
+              data: JSON.stringify({id: $(this).parent().attr('id'),done: $(this).prop('checked')}),
           });
       });
 
@@ -61,9 +49,10 @@
               // A COMPLETER
               // ...
               $.ajax({
-                  url: '',
-                  type: '',
-                  data: {},
+                  url:  '@routes.Application.supprimerTache()',
+                  type: 'DELETE',
+                  contentType:'application/json',
+                  data: JSON.stringify({id: parseInt($(this).parent().attr('id'))}),
                   success: function(result) {
                       $('#' + result.id).remove();
                   }
@@ -84,15 +73,17 @@
               // A COMPLETER
               // ...
               $.ajax({
-                  url: '',
-                  type: '',
-                  data: {},
+                  url: '@routes.Application.editTache()',
+                  type: 'PUT',
+                  contentType:'application/json',
+                  data: JSON.stringify({id : $(this).parent().attr('id'),title: newTitle}),
                   success: function(result) {
                       $('#' + result.id + ' span').text(result.title);
                   }
               });
           }
       });
+
 
   </script>
 
