@@ -5,14 +5,14 @@
 - Ebean
 
 
-####1 ère partie 
+#### 1 ère partie 
 - Une application web pour la gestion d'une liste des tâches 
 
-####2 ère partie 
+#### 2 ère partie 
 - API pour gérer la liste des tâches  
 
-####Démarer le projet
+#### Démarer le projet
 - sbt run
 
-####Deploiement automatique dans Heroku
+#### Deploiement automatique dans Heroku
 - https://play-todolist.herokuapp.com/
