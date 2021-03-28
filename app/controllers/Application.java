@@ -38,10 +38,6 @@ public class Application extends Controller {
 
     // Affiche toutes les tâches (voir variable taches) dans le template views/listTache.html
     public  Result listTache() {
-        // A COMPLETER
-        // ...
-
-
         List<Task> taskList = Task.find.all();
 
         return ( ok(views.html.listTache.render(taskList)));
@@ -49,7 +45,6 @@ public class Application extends Controller {
 
     // Affiche le template views/ajouterTacheForm.html (formulaire d'ajout d'une tâche)
     public  Result ajouterTacheForm() {
-
         return ok(views.html.ajouterTacheForm.render());
     }
 
